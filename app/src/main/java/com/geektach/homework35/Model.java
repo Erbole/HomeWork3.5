@@ -5,6 +5,12 @@ public class Model{
     private int flags;
     private int keuId;
 
+    public Model(String names, int flags, int keuId) {
+        this.names = names;
+        this.flags = flags;
+        this.keuId = keuId;
+    }
+
     public String getNames() {
         return names;
     }
@@ -33,10 +39,5 @@ public class Model{
         this.names = names;
         this.flags = flags;
     }
-
-    public Model(String names, int flags, int keuId) {
-        this.names = names;
-        this.flags = flags;
-        this.keuId = keuId;
-    }
 }
+

@@ -38,10 +38,12 @@ public class ContinentFragment extends Fragment implements OnClick {
     private void loadData() {
         arrayList = new ArrayList<>();
         arrayList.add(new Model("Евразия", R.drawable.caf_3x, 1));
-        arrayList.add(new Model("Северная Америка", R.drawable.cas_3x, 2));
-        arrayList.add(new Model("Южная Америка", R.drawable.ceu_3x, 3));
-        arrayList.add(new Model("Африка", R.drawable.coc_3x, 4));
-        arrayList.add(new Model("Австралия", R.drawable.csa_3x, 5));
+        arrayList.add(new Model("Северная Америка", R.drawable.csa_3x, 2)); // 0
+        arrayList.add(new Model("Южная Америка", R.drawable.csa_3x, 3)); //
+        arrayList.add(new Model("Африка", R.drawable.caf_3x, 4)); //
+        arrayList.add(new Model("Австралия", R.drawable.coc_3x, 5)); //
+        arrayList.add(new Model("Европа", R.drawable.coc_3x, 6)); //
+
     }
 
     @Override
@@ -50,7 +52,7 @@ public class ContinentFragment extends Fragment implements OnClick {
         bundle.putInt(KEY, model.getKeuId());
         Fragment fragment = new CountriesFragment();
         fragment.setArguments(bundle);
-        requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container_main, fragment).commit();
+        requireActivity().getSupportFragmentManager().beginTransaction().addToBackStack("").replace(R.id.container_main, fragment).commit();
     }
 
 }

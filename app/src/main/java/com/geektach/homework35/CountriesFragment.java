@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class CountriesFragment extends Fragment implements OnClick {
     private AdapterContinent adapterContinent;
-    private ArrayList<Model> arrayList;
+    ArrayList<Model> arrayList;
     private RecyclerView recyclerView;
     private static final String KEY = "KEY";
 
@@ -32,7 +32,12 @@ public class CountriesFragment extends Fragment implements OnClick {
         super.onViewCreated(view, savedInstanceState);
         loadData();
         recyclerView = view.findViewById(R.id.recycler_countries);
-        adapterContinent = new AdapterContinent(arrayList, this);
+        adapterContinent = new AdapterContinent(arrayList, new OnClick() {
+            @Override
+            public void click(Model model) {
+
+            }
+        });
         recyclerView.setAdapter(adapterContinent);
     }
 
@@ -42,41 +47,43 @@ public class CountriesFragment extends Fragment implements OnClick {
         int a = bundle.getInt(KEY);
         switch (a) {
             case 1:
-                arrayList.add(new Model("Евразия", R.drawable.caf_3x));
-                arrayList.add(new Model("Северная Америка", R.drawable.cas_3x));
-                arrayList.add(new Model("Южная Америка", R.drawable.ceu_3x));
-                arrayList.add(new Model("Африка", R.drawable.coc_3x));
-                arrayList.add(new Model("Австралия", R.drawable.csa_3x));
+                arrayList.add(new Model("Евразия", R.drawable.eru1));
+                arrayList.add(new Model("Северная Америка", R.drawable.eru2));
+                arrayList.add(new Model("Южная Америка", R.drawable.eru3));
+                arrayList.add(new Model("Африка", R.drawable.eru14));
+                arrayList.add(new Model("Австралия", R.drawable.eru5));
                 break;
             case 2:
-                arrayList.add(new Model("Евразия", R.drawable.caf_3x));
-                arrayList.add(new Model("Северная Америка", R.drawable.cas_3x));
-                arrayList.add(new Model("Южная Америка", R.drawable.ceu_3x));
-                arrayList.add(new Model("Африка", R.drawable.coc_3x));
-                arrayList.add(new Model("Австралия", R.drawable.csa_3x));
+                arrayList.add(new Model("Евразия", R.drawable.north1));
+                arrayList.add(new Model("Северная Америка", R.drawable.north2));
+                arrayList.add(new Model("Южная Америка", R.drawable.north3));
+                arrayList.add(new Model("Африка", R.drawable.north4));
+                arrayList.add(new Model("Австралия", R.drawable.north5));
                 break;
             case 3:
-                arrayList.add(new Model("Евразия", R.drawable.caf_3x));
-                arrayList.add(new Model("Северная Америка", R.drawable.cas_3x));
-                arrayList.add(new Model("Южная Америка", R.drawable.ceu_3x));
-                arrayList.add(new Model("Африка", R.drawable.coc_3x));
-                arrayList.add(new Model("Австралия", R.drawable.csa_3x));
+                arrayList.add(new Model("Евразия", R.drawable.sorth1));
+                arrayList.add(new Model("Северная Америка", R.drawable.sorth2));
+                arrayList.add(new Model("Южная Америка", R.drawable.sorth3));
+                arrayList.add(new Model("Африка", R.drawable.sorth4));
+                arrayList.add(new Model("Австралия", R.drawable.sorth5));
                 break;
             case 4:
-                arrayList.add(new Model("Евразия", R.drawable.caf_3x));
-                arrayList.add(new Model("Северная Америка", R.drawable.cas_3x));
-                arrayList.add(new Model("Южная Америка", R.drawable.ceu_3x));
-                arrayList.add(new Model("Африка", R.drawable.coc_3x));
-                arrayList.add(new Model("Австралия", R.drawable.csa_3x));
+                arrayList.add(new Model("Евразия", R.drawable.africa));
+                arrayList.add(new Model("Северная Америка", R.drawable.africa1));
+                arrayList.add(new Model("Южная Америка", R.drawable.africa2));
+                arrayList.add(new Model("Африка", R.drawable.africa3));
+                arrayList.add(new Model("Австралия", R.drawable.africa4));
                 break;
             case 5:
-                arrayList.add(new Model("Евразия", R.drawable.caf_3x));
-                arrayList.add(new Model("Северная Америка", R.drawable.cas_3x));
-                arrayList.add(new Model("Южная Америка", R.drawable.ceu_3x));
-                arrayList.add(new Model("Африка", R.drawable.coc_3x));
-                arrayList.add(new Model("Австралия", R.drawable.csa_3x));
+                arrayList.add(new Model("AUSTR", R.drawable.australia));
                 break;
-
+            case 6:
+                arrayList.add(new Model("Европа", R.drawable.eouro1));
+                arrayList.add(new Model("Европа", R.drawable.eouro2));
+                arrayList.add(new Model("Европа", R.drawable.eouro3));
+                arrayList.add(new Model("Европа", R.drawable.eouro4));
+                arrayList.add(new Model("Европа", R.drawable.eouro5));
+                break;
 
         }
     }
